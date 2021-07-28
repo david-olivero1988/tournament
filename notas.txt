@@ -1,0 +1,23 @@
+comandos
+npm init --yes // este comando nos crea el package.json
+creamos src/
+creamos archivo .babelrc
+creamos webpack.config.js
+app/ será el front y se convertira a public/
+
+ejecutamos
+npm install express
+
+express importa al navegador los archivos estáticos, que son los que están en public con
+app.use(express.static(__dirname + '/public'))
+
+se instala nodemon para que se refresque el código sin reiniciar el servicio
+npm install nodemon
+se debe crear el comando en package.json
+"script": {
+    "dev": "nodemon src/index.js"
+}
+luego se corre con # npm run dev
+
+
+
