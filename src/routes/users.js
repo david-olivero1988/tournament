@@ -5,20 +5,24 @@ const User = require('../models/User');
 
 router.get('/', async (req, res) => {
     const users = await User.find();
-    console.log(users);
+
     res.json(users);
 });
 
 router.post('/', async (req, res) => {
     const user = new User(req.body);
-    // console.log(new User());
-    console.log(user);
     await user.save();
     res.json({
         status: 'User saved'
     });
 
 });
+
+router.get('/:id', async (req, res) => {
+    const user = await User.findById(req.params.id);
+
+    res.json(user);
+})
 
 router.put('/:id', async (req, res) => {
 
