@@ -2,7 +2,7 @@
 const { VueLoaderPlugin } = require('vue-loader');
 
 module.exports = {
-    entry: './src/app/index.js',
+    entry: './src/app/bundle.js',
     output: {
         path: __dirname + '/src/public/js',
         filename: 'bundle.js'
@@ -18,15 +18,24 @@ module.exports = {
             },
             {
                 test: /\.vue$/,
-                loader: 'vue-loader'
+                loader: 'vue-loader',
+
             },
-            // {
-            //     test: /\.css$/,
-            //     use: [
-            //       'vue-style-loader',
-            //       'css-loader'
-            //     ]
-            // }
+            {
+                test: /\.css$/,
+                use: [
+                  'vue-style-loader',
+                  'css-loader'
+                ]
+            },
+            {
+                test: /\.scss$/,
+                use: [
+                  'vue-style-loader',
+                  'css-loader',
+                  'sass-loader'
+                ]
+            }
         ]
     },
     plugins: [
