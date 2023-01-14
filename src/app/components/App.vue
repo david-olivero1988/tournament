@@ -25,15 +25,23 @@
         <md-app-content>
             <router-view></router-view>
         </md-app-content>
+
+
     </md-app>
+    <footer-vue>
+    </footer-vue>
+
+
 </div>
 </template>
 
 <script>
 import Sidebar from './Sidebar.vue';
+import FooterVue from './FooterVue.vue';
 export default {
     components: {
-        Sidebar
+        Sidebar,
+        FooterVue
     },
     name: 'PersistentMini',
     data: () => ({
@@ -57,5 +65,14 @@ export default {
 .md-drawer {
     width: 230px;
     max-width: calc(100vw - 125px);
+}
+.footer-public {
+    margin-top: 80px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    font-size: 13px;
+    color: #5f6472;
+    border-top: 1px solid #303542;
+    background-color: transparent;
 }
 </style>

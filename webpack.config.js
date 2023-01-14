@@ -1,5 +1,7 @@
 
 const { VueLoaderPlugin } = require('vue-loader');
+// webpack needs to be explicitly required
+const webpack = require('webpack')
 
 module.exports = {
     entry: './src/app/bundle.js',
@@ -39,6 +41,9 @@ module.exports = {
         ]
     },
     plugins: [
-        new VueLoaderPlugin()
+        new VueLoaderPlugin(),
+        new webpack.ProvidePlugin({
+            process: 'process/browser',
+        }),
     ]
 };

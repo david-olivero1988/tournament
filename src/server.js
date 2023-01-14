@@ -22,6 +22,7 @@ app.use('/api/users', require('./routes/users'));
 app.use(express.static(__dirname + '/public'));
 
 // Server is listening
-app.listen(app.get('port'), () => {
-    console.log('Server on port ', app.get('port'));
+app.listen(app.get('port'), (req, res) => {
+    console.log('Server url and port ', "http://localhost:" + app.get('port'));
+    // res.redirect("http://localhost:" + app.get('port'));
 });
